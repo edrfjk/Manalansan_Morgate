@@ -1,0 +1,1066 @@
+/* ==========================================================================
+   Avenza Furniture Shop — theme layer over INSPINIA
+
+   Scoped to #page-wrapper .wrapper-content (or .page-heading) so the sidebar,
+   top navbar, and footer keep the original INSPINIA look.
+   Loaded after style.css so these rules win.
+   ========================================================================== */
+
+/* Variables stay global — scoping them would break inheritance. */
+:root {
+    --ink:    #241C17;   /* brown-black, not neutral black */
+    --ink-80: #3A2E26;
+    --pine:   #2F4739;   /* primary action */
+    --pine-d: #223428;
+    --walnut: #6B4A32;
+    --brass:  #B8873F;   /* prices only */
+    --stone:  #ECEAE5;   /* page background */
+    --paper:  #FBFAF8;   /* cards */
+    --line:   #DCD6CC;
+    --muted:  #7A7168;
+}
+
+
+/* --- Page surface ------------------------------------------------------- */
+
+#page-wrapper .wrapper-content,
+#page-wrapper .page-heading {
+    background-color: var(--stone);
+    font-family: 'Karla', 'Open Sans', sans-serif;
+    color: var(--ink-80);
+}
+
+#page-wrapper .page-heading {
+    background-color: var(--paper);
+    border-bottom: 1px solid var(--line);
+    border-top: 0;
+}
+
+#page-wrapper .wrapper-content h1,
+#page-wrapper .wrapper-content h2,
+#page-wrapper .wrapper-content h3,
+#page-wrapper .wrapper-content h4,
+#page-wrapper .wrapper-content h5,
+#page-wrapper .page-heading h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+}
+
+
+/* --- Cards -------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .ibox {
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    box-shadow: none;
+    margin-bottom: 24px;
+}
+
+#page-wrapper .wrapper-content .ibox-title {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 14px 18px 10px;
+}
+
+#page-wrapper .wrapper-content .ibox-title h5 {
+    font-family: 'Karla', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+#page-wrapper .wrapper-content .ibox-content {
+    background-color: transparent;
+    border: 0;
+    padding: 18px;
+}
+
+
+/* --- Buttons ------------------------------------------------------------ */
+
+#page-wrapper .wrapper-content .btn {
+    border-radius: 2px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+#page-wrapper .wrapper-content .btn-primary {
+    background-color: var(--pine);
+    border-color: var(--pine);
+}
+
+#page-wrapper .wrapper-content .btn-primary:hover,
+#page-wrapper .wrapper-content .btn-primary:focus,
+#page-wrapper .wrapper-content .btn-primary:active {
+    background-color: var(--pine-d);
+    border-color: var(--pine-d);
+}
+
+#page-wrapper .wrapper-content .btn-white {
+    background-color: var(--paper);
+    border-color: var(--line);
+    color: var(--ink-80);
+}
+
+#page-wrapper .wrapper-content .btn-white:hover {
+    background-color: #F1EEE8;
+}
+
+#page-wrapper .wrapper-content .btn-info {
+    background-color: var(--walnut);
+    border-color: var(--walnut);
+}
+
+#page-wrapper .wrapper-content .btn-warning {
+    background-color: var(--brass);
+    border-color: var(--brass);
+}
+
+#page-wrapper .wrapper-content .btn-secondary {
+    background-color: transparent;
+    border-color: var(--line);
+    color: var(--muted);
+}
+
+
+/* --- Labels ------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .label {
+    border-radius: 2px;
+    font-weight: 700;
+}
+
+#page-wrapper .wrapper-content .label-primary { background-color: var(--pine); }
+#page-wrapper .wrapper-content .label-warning { background-color: var(--brass); }
+#page-wrapper .wrapper-content .label-info    { background-color: var(--walnut); }
+
+
+/* --- Tables ------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .table thead th {
+    border-bottom: 2px solid var(--line);
+    border-top: 0;
+    font-family: 'Karla', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+#page-wrapper .wrapper-content .table td {
+    border-top: 1px solid var(--line);
+    vertical-align: middle;
+}
+
+#page-wrapper .wrapper-content .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #F4F1EC;
+}
+
+#page-wrapper .wrapper-content .table-hover tbody tr:hover {
+    background-color: #EFEBE3;
+}
+
+
+/* --- Forms -------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .form-control {
+    border-radius: 2px;
+    border-color: var(--line);
+    background-color: #FFF;
+    color: var(--ink-80);
+}
+
+#page-wrapper .wrapper-content .form-control:focus {
+    border-color: var(--pine);
+    box-shadow: 0 0 0 2px rgba(47, 71, 57, 0.12);
+}
+
+#page-wrapper .wrapper-content label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-80);
+}
+
+
+/* --- Tabs --------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .nav-tabs {
+    border-bottom: 1px solid var(--line);
+}
+
+#page-wrapper .wrapper-content .nav-tabs .nav-link {
+    color: var(--muted);
+    border: 0;
+    border-radius: 0;
+    font-weight: 700;
+}
+
+#page-wrapper .wrapper-content .nav-tabs .nav-link.active {
+    color: var(--ink);
+    background-color: transparent;
+    border-bottom: 2px solid var(--brass);
+}
+
+
+/* --- Price ---------------------------------------------------------------
+   Reserved for money. Nothing else gets brass + serif — that pairing is how
+   a customer's eye finds cost without anything being bolded at them.
+   -------------------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .price {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--brass);
+}
+
+#page-wrapper .wrapper-content .price-lg {
+    font-size: 26px;
+}
+
+
+/* --- Product images ------------------------------------------------------ */
+
+#page-wrapper .wrapper-content .product-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+#page-wrapper .wrapper-content .product-thumb-empty {
+    height: 180px;
+    background-color: var(--stone);
+    color: var(--line);
+    text-align: center;
+    line-height: 180px;
+    font-size: 28px;
+}
+
+#page-wrapper .wrapper-content .product-thumb-sm {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+
+/* --- Pagination --------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .page-link {
+    color: var(--ink-80);
+    border-color: var(--line);
+    border-radius: 0;
+}
+
+#page-wrapper .wrapper-content .page-item.active .page-link {
+    background-color: var(--pine);
+    border-color: var(--pine);
+}------------------------------------------------------------ */
+
+.avz-head {
+    background-color: var(--paper);
+    border-bottom: 1px solid var(--line);
+    padding: 26px 30px 22px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.avz-head__eyebrow {
+    font-family: 'Karla', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--brass);
+    margin-bottom: 4px;
+}
+
+.avz-head h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.avz-head__sub {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 6px 0 0;
+}
+
+/* --- Stat tiles ----------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-stat {
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--pine);
+    border-radius: 2px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    height: calc(100% - 24px);
+}
+
+#page-wrapper .wrapper-content .avz-stat--brass { border-top-color: var(--brass); }
+#page-wrapper .wrapper-content .avz-stat--walnut { border-top-color: var(--walnut); }
+
+#page-wrapper .wrapper-content .avz-stat__label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+#page-wrapper .wrapper-content .avz-stat__value {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 8px 0 2px;
+}
+
+#page-wrapper .wrapper-content .avz-stat__note {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* --- Stock meter ---------------------------------------------------------
+   A bar reads faster than a number when you're scanning 40 rows for problems.
+   -------------------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-meter {
+    width: 62px;
+    height: 5px;
+    background-color: var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+#page-wrapper .wrapper-content .avz-meter__fill {
+    height: 100%;
+    background-color: var(--pine);
+}
+
+#page-wrapper .wrapper-content .avz-meter__fill--low  { background-color: var(--brass); }
+#page-wrapper .wrapper-content .avz-meter__fill--none { background-color: #A5453B; }
+
+/* --- Status pill ---------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 11px;
+    border: 1px solid;
+}
+
+#page-wrapper .wrapper-content .avz-pill--pending   { color: #8A6420; border-color: #E0C48C; background: #FBF3E2; }
+#page-wrapper .wrapper-content .avz-pill--paid      { color: #2F4739; border-color: #A9BFB0; background: #EAF1EC; }
+#page-wrapper .wrapper-content .avz-pill--shipped   { color: #1F5C3D; border-color: #93C7AA; background: #E4F3EA; }
+#page-wrapper .wrapper-content .avz-pill--cancelled { color: #8C3A31; border-color: #DDA9A2; background: #F8EBE9; }
+#page-wrapper .wrapper-content .avz-pill--active    { color: #2F4739; border-color: #A9BFB0; background: #EAF1EC; }
+#page-wrapper .wrapper-content .avz-pill--suspended { color: #8A6420; border-color: #E0C48C; background: #FBF3E2; }
+#page-wrapper .wrapper-content .avz-pill--blocked   { color: #8C3A31; border-color: #DDA9A2; background: #F8EBE9; }
+
+/* --- Filter chips --------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-chip {
+    display: inline-block;
+    padding: 6px 15px;
+    margin: 0 5px 6px 0;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background-color: var(--paper);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#page-wrapper .wrapper-content .avz-chip:hover {
+    border-color: var(--walnut);
+    color: var(--ink);
+    text-decoration: none;
+}
+
+#page-wrapper .wrapper-content .avz-chip--on {
+    background-color: var(--pine);
+    border-color: var(--pine);
+    color: #FFF;
+}
+
+/* --- Empty state ---------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-empty {
+    text-align: center;
+    padding: 46px 20px;
+    color: var(--muted);
+}
+
+#page-wrapper .wrapper-content .avz-empty i {
+    font-size: 34px;
+    color: var(--line);
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* --- Order progress ------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-track {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 4px;
+}
+
+#page-wrapper .wrapper-content .avz-track li {
+    flex: 1;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--line);
+    border-top: 3px solid var(--line);
+    padding-top: 8px;
+}
+
+#page-wrapper .wrapper-content .avz-track li.done {
+    color: var(--pine);
+    border-top-color: var(--pine);
+}
+
+/* --- Section rule --------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-rule {
+    font-family: 'Karla', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 8px;
+    margin: 6px 0 18px;
+}
+
+/* --- Definition rows ------------------------------------------------------ */
+
+#page-wrapper .wrapper-content .avz-dl {
+    margin: 0;
+}
+
+#page-wrapper .wrapper-content .avz-dl dt {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 14px;
+}
+
+#page-wrapper .wrapper-content .avz-dl dd {
+    margin: 2px 0 0;
+    color: var(--ink);
+}
+
+
+/* --- Chart cards ---------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-chart {
+    position: relative;
+    height: 260px;
+}
+
+#page-wrapper .wrapper-content .avz-chart--sm {
+    height: 210px;
+}
+
+#page-wrapper .wrapper-content .avz-legend {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 0;
+    font-size: 12px;
+}
+
+#page-wrapper .wrapper-content .avz-legend li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+#page-wrapper .wrapper-content .avz-legend li:last-child {
+    border-bottom: 0;
+}
+
+#page-wrapper .wrapper-content .avz-swatch {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+    margin-right: 8px;
+}
+
+/* --- Rank list ------------------------------------------------------------ */
+
+#page-wrapper .wrapper-content .avz-rank {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+#page-wrapper .wrapper-content .avz-rank:last-child {
+    border-bottom: 0;
+}
+
+#page-wrapper .wrapper-content .avz-rank__no {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 18px;
+    color: var(--line);
+    width: 26px;
+    flex-shrink: 0;
+}
+
+#page-wrapper .wrapper-content .avz-rank__body {
+    flex: 1;
+    min-width: 0;
+}
+
+#page-wrapper .wrapper-content .avz-rank__name {
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   Storefront — customer side only
+   ========================================================================== */
+
+/* --- Hero ----------------------------------------------------------------
+   Ink panel with the brass rule. The shop's one loud moment; everything
+   after it stays quiet so the furniture photos carry the page.
+   -------------------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-hero {
+    background-color: var(--ink);
+    color: #E8E0D6;
+    padding: 64px 50px;
+    margin: -20px -20px 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+#page-wrapper .wrapper-content .avz-hero::after {
+    content: '';
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(184, 135, 63, 0.28);
+    border-radius: 50%;
+}
+
+#page-wrapper .wrapper-content .avz-hero__eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: var(--brass);
+    margin-bottom: 16px;
+}
+
+#page-wrapper .wrapper-content .avz-hero h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #FBFAF8;
+    margin: 0 0 18px;
+    max-width: 15ch;
+}
+
+#page-wrapper .wrapper-content .avz-hero p {
+    max-width: 46ch;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #B9AC9C;
+    margin-bottom: 28px;
+}
+
+#page-wrapper .wrapper-content .avz-hero .btn-primary {
+    background-color: var(--brass);
+    border-color: var(--brass);
+    padding: 11px 30px;
+}
+
+#page-wrapper .wrapper-content .avz-hero .btn-primary:hover {
+    background-color: #A5762F;
+    border-color: #A5762F;
+}
+
+@media (max-width: 767px) {
+    #page-wrapper .wrapper-content .avz-hero { padding: 40px 26px; }
+    #page-wrapper .wrapper-content .avz-hero h1 { font-size: 34px; }
+}
+
+/* --- Room tiles ----------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-room {
+    display: block;
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    padding: 28px 24px;
+    margin-bottom: 24px;
+    text-decoration: none;
+    height: calc(100% - 24px);
+    transition: border-color .18s, transform .18s;
+}
+
+#page-wrapper .wrapper-content .avz-room:hover {
+    border-color: var(--walnut);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+#page-wrapper .wrapper-content .avz-room__name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+
+#page-wrapper .wrapper-content .avz-room__desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    min-height: 40px;
+}
+
+#page-wrapper .wrapper-content .avz-room__count {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--brass);
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+    margin-top: 14px;
+}
+
+/* --- Product card --------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-card {
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    margin-bottom: 26px;
+    height: calc(100% - 26px);
+    display: flex;
+    flex-direction: column;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+#page-wrapper .wrapper-content .avz-card:hover {
+    border-color: var(--walnut);
+    box-shadow: 0 6px 18px rgba(36, 28, 23, 0.07);
+}
+
+#page-wrapper .wrapper-content .avz-card__media {
+    position: relative;
+    display: block;
+    background-color: var(--stone);
+    overflow: hidden;
+}
+
+#page-wrapper .wrapper-content .avz-card__media img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+}
+
+#page-wrapper .wrapper-content .avz-card:hover .avz-card__media img {
+    transform: scale(1.04);
+}
+
+#page-wrapper .wrapper-content .avz-card__media--empty {
+    height: 210px;
+    line-height: 210px;
+    text-align: center;
+    color: var(--line);
+    font-size: 30px;
+}
+
+#page-wrapper .wrapper-content .avz-card__flag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--ink);
+    color: #FBFAF8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+}
+
+#page-wrapper .wrapper-content .avz-card__flag--out {
+    background-color: #A5453B;
+}
+
+#page-wrapper .wrapper-content .avz-card__body {
+    padding: 16px 18px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#page-wrapper .wrapper-content .avz-card__room {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-bottom: 5px;
+}
+
+#page-wrapper .wrapper-content .avz-card__name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 10px;
+}
+
+#page-wrapper .wrapper-content .avz-card__name a { color: inherit; }
+#page-wrapper .wrapper-content .avz-card__name a:hover { color: var(--walnut); text-decoration: none; }
+
+#page-wrapper .wrapper-content .avz-card__foot {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+/* --- Product detail ------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-detail__media img {
+    width: 100%;
+    display: block;
+    border: 1px solid var(--line);
+}
+
+#page-wrapper .wrapper-content .avz-detail h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 6px 0 14px;
+}
+
+#page-wrapper .wrapper-content .avz-detail__lede {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-80);
+    max-width: 60ch;
+}
+
+#page-wrapper .wrapper-content .avz-detail__price {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 0;
+    margin: 24px 0;
+}
+
+/* --- Breadcrumb ----------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-crumb {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+#page-wrapper .wrapper-content .avz-crumb a { color: var(--muted); }
+#page-wrapper .wrapper-content .avz-crumb a:hover { color: var(--walnut); }
+
+/* --- Section heading ------------------------------------------------------ */
+
+#page-wrapper .wrapper-content .avz-section {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+    margin: 34px 0 24px;
+}
+
+#page-wrapper .wrapper-content .avz-section h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+}
+
+/* --- Cart lines ----------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+#page-wrapper .wrapper-content .avz-line:last-child {
+    border-bottom: 0;
+}
+
+#page-wrapper .wrapper-content .avz-line__media img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    display: block;
+}
+
+#page-wrapper .wrapper-content .avz-line__media--empty {
+    width: 96px;
+    height: 96px;
+    background-color: var(--stone);
+    color: var(--line);
+    text-align: center;
+    line-height: 96px;
+    font-size: 22px;
+}
+
+#page-wrapper .wrapper-content .avz-line__body {
+    flex: 1;
+    min-width: 0;
+}
+
+#page-wrapper .wrapper-content .avz-line__name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+#page-wrapper .wrapper-content .avz-line__name a { color: inherit; }
+#page-wrapper .wrapper-content .avz-line__name a:hover { color: var(--walnut); text-decoration: none; }
+
+#page-wrapper .wrapper-content .avz-line__room {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+#page-wrapper .wrapper-content .avz-line__right {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+#page-wrapper .wrapper-content .avz-qty {
+    width: 66px;
+    display: inline-block;
+}
+
+/* --- Summary panel -------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-summary {
+    background-color: var(--ink);
+    color: #C9BFB4;
+    padding: 26px 24px;
+    margin-bottom: 24px;
+}
+
+#page-wrapper .wrapper-content .avz-summary__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    font-size: 14px;
+}
+
+#page-wrapper .wrapper-content .avz-summary__total {
+    border-top: 1px solid rgba(184, 135, 63, 0.35);
+    margin-top: 12px;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#page-wrapper .wrapper-content .avz-summary__total strong {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--brass);
+}
+
+#page-wrapper .wrapper-content .avz-summary .btn-primary {
+    background-color: var(--brass);
+    border-color: var(--brass);
+    padding: 11px;
+    margin-top: 18px;
+}
+
+#page-wrapper .wrapper-content .avz-summary .btn-primary:hover {
+    background-color: #A5762F;
+    border-color: #A5762F;
+}
+
+#page-wrapper .wrapper-content .avz-summary__note {
+    font-size: 12px;
+    color: #8C8177;
+    margin-top: 14px;
+    line-height: 1.5;
+}
+
+/* --- Address block -------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-address {
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--walnut);
+    padding: 16px 18px;
+    background-color: #F6F3EE;
+    line-height: 1.6;
+}
+
+#page-wrapper .wrapper-content .avz-address--warn {
+    border-left-color: #A5453B;
+}
+
+/* --- Order list card ------------------------------------------------------ */
+
+#page-wrapper .wrapper-content .avz-order {
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    padding: 20px 22px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: border-color .18s;
+}
+
+#page-wrapper .wrapper-content .avz-order:hover {
+    border-color: var(--walnut);
+}
+
+#page-wrapper .wrapper-content .avz-order__thumbs {
+    display: flex;
+    flex-shrink: 0;
+}
+
+#page-wrapper .wrapper-content .avz-order__thumbs img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border: 2px solid var(--paper);
+    margin-left: -14px;
+}
+
+#page-wrapper .wrapper-content .avz-order__thumbs img:first-child {
+    margin-left: 0;
+}
+
+#page-wrapper .wrapper-content .avz-order__more {
+    width: 54px;
+    height: 54px;
+    margin-left: -14px;
+    border: 2px solid var(--paper);
+    background-color: var(--stone);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+}
+
+#page-wrapper .wrapper-content .avz-order__body {
+    flex: 1;
+    min-width: 0;
+}
+
+#page-wrapper .wrapper-content .avz-order__no {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+#page-wrapper .wrapper-content .avz-order__meta {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+#page-wrapper .wrapper-content .avz-order__right {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+@media (max-width: 575px) {
+    #page-wrapper .wrapper-content .avz-order {
+        flex-wrap: wrap;
+    }
+}
+
+/* --- Receipt -------------------------------------------------------------- */
+
+#page-wrapper .wrapper-content .avz-receipt {
+    background-color: var(--paper);
+    border: 1px solid var(--line);
+    padding: 34px 38px;
+}
+
+#page-wrapper .wrapper-content .avz-receipt__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 20px;
+    margin-bottom: 6px;
+}
+
+#page-wrapper .wrapper-content .avz-receipt__mark {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+}
+
+#page-wrapper .wrapper-content .avz-receipt__no {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    color: var(--walnut);
+}
+
+#page-wrapper .wrapper-content .avz-receipt__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-top: 2px solid var(--ink);
+    margin-top: 8px;
+    padding-top: 18px;
+}
+
+#page-wrapper .wrapper-content .avz-receipt__total span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
